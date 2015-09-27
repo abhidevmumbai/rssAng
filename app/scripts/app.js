@@ -12,7 +12,8 @@ angular
     .module('rssfeed', [
         'ngAnimate',
         'ngRoute',
-        'ngSanitize'
+        'ngSanitize',
+        'ui.bootstrap'
     ])
     .run(function() {
         // Initialization code here

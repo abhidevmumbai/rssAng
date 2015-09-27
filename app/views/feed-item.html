@@ -1,11 +1,8 @@
 <div class="thumbnail">
-    <img src="..." alt="...">
+    <img ng-src="feed.img" alt="feed.title" ng-click="openDetails(feed)">
     <div class="caption">
-        <h3 ng-bind-html="feed.title"></h3>
-        <p ng-bind-html="feed.content"></p>
-        <p ng-bind-html="feed.contentSnippet"></p>
+        <a href="#" ng-click="openDetails(feed)" ng-bind-html="feed.title"></a>
         <p ng-bind-html="feed.publishedDate"></p>
-        <p ng-bind-html="feed.categories"></p>
-        <p><a ng-href="{{feed.link}}" class="btn btn-primary" role="button" target="_blank">source</a></p>
+        <p ng-bind-html="feed.categories" class="badge"></p>
     </div>
 </div>
