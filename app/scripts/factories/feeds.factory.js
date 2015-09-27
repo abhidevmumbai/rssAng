@@ -17,19 +17,39 @@ angular.module('rssfeed')
             return deferred.promise;
         }
 
-        function sanitizeFeedEntry(feedEntry) {
-            console.log('Before...');
-            console.log(feedEntry);
+        // Sanitize the feed
+        function sanitizeFeedEntry (feedEntry) {
+            var filteredContent = filterContent(feedEntry.content);
+
             feedEntry.author = $sce.trustAsHtml(feedEntry.author);
             feedEntry.categories = $sce.trustAsHtml(feedEntry.categories[0]);
             feedEntry.title = $sce.trustAsHtml(feedEntry.title);
             feedEntry.link = $sce.trustAsHtml(feedEntry.link);
             feedEntry.contentSnippet = $sce.trustAsHtml(feedEntry.contentSnippet);
-            feedEntry.content = $sce.trustAsHtml(feedEntry.content);
+            feedEntry.img = filteredContent.img;
+            feedEntry.content = $sce.trustAsHtml(filteredContent.content);
             feedEntry.publishedDate = new Date(feedEntry.publishedDate).getTime();
-            console.log('After...');
-            console.log(feedEntry);
+
             return feedEntry;
+        }
+
+        // Filter out media and content
+        function filterContent (content) {
+            var container = $('<div></div>').html(content),
+                img = container.find('img'),
+                src = '';
+
+            if (img.length > 0) {
+                src = 'http://www.toursfc.fr' + img.attr('src');
+                img.remove();
+            } else {
+                src = 'images/default_thumbnail.jpg'
+            }
+
+            return {
+                img: src,
+                content: container.html()
+            }
         }
         return {
     		getFeeds: getFeeds

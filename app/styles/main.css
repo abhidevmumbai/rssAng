@@ -8,6 +8,9 @@ body {
   margin: 0 5px 0 0; 
 }
 
+.feeds .thumbnail img {
+	max-width: 100%;
+}
 .feeds .thumbnail {
-	height: 150px;
+	height: 250px;
 }
