@@ -35,13 +35,16 @@ angular.module('rssfeed')
 
         // Filter out media and content
         function filterContent (content) {
+            // Fix the image urls
+            var re = new RegExp('/datas/', 'g');
+            content = content.replace(re, 'http://www.toursfc.fr/datas/');
+
             var container = $('<div></div>').html(content),
                 img = container.find('img'),
                 src = '';
-
+            // Set the thumbnail img url    
             if (img.length > 0) {
-                src = 'http://www.toursfc.fr' + img.attr('src');
-                img.remove();
+                src = img.attr('src');
             } else {
                 src = 'images/default_thumbnail.jpg'
             }
