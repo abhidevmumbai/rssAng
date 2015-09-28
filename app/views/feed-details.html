@@ -1,8 +1,7 @@
 <div class="modal-body details">
-    <img ng-src="{{feed.img}}" />
     <p ng-bind-html="feed.content"></p>
     <p ng-bind-html="feed.contentSnippet"></p>
-    <p ng-bind-html="feed.publishedDate"></p>
+    <p ng-bind-html="feed.publishedDate | date"></p>
     <p ng-bind-html="feed.categories" class="badge"></p>
 </div>
 <div class="modal-footer">

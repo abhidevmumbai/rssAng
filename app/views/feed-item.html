@@ -4,7 +4,7 @@
     </a>
     <div class="caption">
         <a href="#" ng-click="openDetails($event, feed)" ng-bind-html="feed.title"></a>
-        <p ng-bind-html="feed.publishedDate"></p>
+        <p ng-bind-html="feed.publishedDate | date"></p>
         <p ng-bind-html="feed.categories" class="badge"></p>
     </div>
 </div>
