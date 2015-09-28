@@ -18,7 +18,9 @@ body {
 .details iframe {
 	max-width: 100%;
 }
-
+.details table {
+	width:auto;
+}
 .feeds .thumbnail {
 	background: #373B3E;
 	overflow: hidden;
