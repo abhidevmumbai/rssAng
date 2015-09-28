@@ -14,7 +14,8 @@ angular.module('rssfeed')
         }
 
         // method to open feed details
-        $scope.openDetails = function(feed) {
+        $scope.openDetails = function(ev, feed) {
+        	ev.preventDefault();
         	console.log(feed);
             var modalInstance = $modal.open({
                 animation: true,

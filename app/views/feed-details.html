@@ -4,9 +4,8 @@
     <p ng-bind-html="feed.contentSnippet"></p>
     <p ng-bind-html="feed.publishedDate"></p>
     <p ng-bind-html="feed.categories" class="badge"></p>
-    <p><a ng-href="{{feed.link}}" class="btn btn-primary" role="button" target="_blank">View source</a>
-    </p>
 </div>
 <div class="modal-footer">
+	<a ng-href="{{feed.link}}" class="btn btn-primary" role="button" target="_blank">View source</a>
     <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
 </div>
