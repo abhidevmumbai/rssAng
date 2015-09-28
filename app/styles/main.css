@@ -14,3 +14,10 @@ body {
 .feeds .thumbnail {
 	height: 250px;
 }
+
+.details img {
+	width: 100%;
+}
+.details iframe {
+	max-width: 100%;
+}

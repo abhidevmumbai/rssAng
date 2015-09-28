@@ -1,13 +1,11 @@
-<div class="modal-body">
-    <div class="thumbnail">
-        <img ng-src="{{feed.img}}" />
-        <p ng-bind-html="feed.content"></p>
-        <p ng-bind-html="feed.contentSnippet"></p>
-        <p ng-bind-html="feed.publishedDate"></p>
-        <p ng-bind-html="feed.categories" class="badge"></p>
-        <p><a ng-href="{{feed.link}}" class="btn btn-primary" role="button" target="_blank">View source</a>
-        </p>
-    </div>
+<div class="modal-body details">
+    <img ng-src="{{feed.img}}" />
+    <p ng-bind-html="feed.content"></p>
+    <p ng-bind-html="feed.contentSnippet"></p>
+    <p ng-bind-html="feed.publishedDate"></p>
+    <p ng-bind-html="feed.categories" class="badge"></p>
+    <p><a ng-href="{{feed.link}}" class="btn btn-primary" role="button" target="_blank">View source</a>
+    </p>
 </div>
 <div class="modal-footer">
     <button class="btn btn-warning" type="button" ng-click="cancel()">Close</button>
